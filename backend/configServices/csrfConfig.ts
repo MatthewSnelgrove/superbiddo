@@ -19,7 +19,7 @@ const doubleCsrfOptions: DoubleCsrfConfigOptions = {
 };
 export const {
   invalidCsrfTokenError, // This is just for convenience if you plan on making your own middleware.
-  generateToken, // Use this in your routes to provide a CSRF hash + token cookie and token.
+  generateCsrfToken, // Use this in your routes to provide a CSRF token.
   validateRequest, // Also a convenience if you plan on making your own middleware.
   doubleCsrfProtection, // This is the default CSRF protection middleware.
 } = doubleCsrf(doubleCsrfOptions);
@@ -33,7 +33,7 @@ export const csrfRoute: RequestHandler = (req, res) => {
     );
   }
   if (!req.session.csrfToken) {
-    req.session.csrfToken = generateToken(req, res);
+    req.session.csrfToken = generateCsrfToken(req, res);
   }
 
   res.json({ csrfToken: req.session.csrfToken });
