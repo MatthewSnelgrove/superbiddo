@@ -9,7 +9,7 @@ import {
 } from "../utils/errors.js";
 import {
   doubleCsrfProtection,
-  generateToken,
+  generateCsrfToken,
 } from "../configServices/csrfConfig.js";
 export const router = express.Router();
 
@@ -94,7 +94,7 @@ router.post("/", async (req, res, next) => {
   }
 
   req.session.accountId = accountRecord.accountId;
-  req.session.csrfToken = generateToken(req, res);
+  req.session.csrfToken = generateCsrfToken(req, res);
 
   const account:
     | Account
