@@ -1121,7 +1121,7 @@ export default function Auction({
             type="number"
             inputProps={{
               step: "0.01",
-              min: (bidCount > 0 ? curBid : curMinBid) + spread,
+              min: ((bidCount > 0 ? curBid : curMinBid) + spread).toFixed(2),
             }}
             defaultValue={(
               (bidCount > 0 ? curBid : curMinBid) + spread
