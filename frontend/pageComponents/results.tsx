@@ -8,7 +8,7 @@ import Popper from "@mui/material/Popper";
 import Paper from "@mui/material/Paper";
 import Checkbox from "@mui/material/Checkbox";
 import { Fade } from "@mui/material";
-import { ClickAwayListener } from "@mui/base/ClickAwayListener";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
 import FormControl from "@mui/material/FormControl";
 import FormGroup from "@mui/material/FormGroup";
 import FormLabel from "@mui/material/FormLabel";
