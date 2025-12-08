@@ -54,7 +54,7 @@ router.get(
   passport.authenticate("google", {
     failureRedirect: process.env.FRONTEND_URL,
   }),
-  (req, res) => {
+  (req: express.Request & { user: Account }, res: express.Response) => {
     req.session.accountId = req.user.accountId;
     req.session.csrfToken = generateCsrfToken(req, res);
     res.redirect(process.env.FRONTEND_URL);
