@@ -4,7 +4,7 @@ import styles from "@/styles/navbar.module.css";
 import Image from "next/image";
 import IconButton from "@mui/material/IconButton";
 import { PageName } from "@/types/pageTypes";
-import { motion } from "motion/react";
+import { motion, Variants } from "motion/react";
 import { useInView, useScroll, useMotionValueEvent } from "motion/react";
 import { fetchLogout, getAuctionSearchResults } from "@/utils/fetchFunctions";
 import { ErrorType } from "@/types/errorTypes";
@@ -23,7 +23,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { Auction } from "@/types/backendAuctionTypes";
 import LocationEdit from "@/components/locationEdit";
 
-const navVariants = {
+const navVariants: Variants = {
   hidden: {
     opacity: 0,
     y: "-20px",

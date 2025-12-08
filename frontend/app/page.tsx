@@ -15,7 +15,7 @@ import { ErrorType, Severity } from "@/types/errorTypes";
 import ErrorToast from "@/components/errorToast";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, Variants } from "motion/react";
 import Results from "@/pageComponents/results";
 import Home from "@/pageComponents/home";
 import { pollNotifications } from "@/utils/fetchFunctions";
@@ -42,7 +42,7 @@ const theme = createTheme({
   },
 });
 
-const pageVariants = {
+const pageVariants: Variants = {
   hidden: {
     opacity: 0,
     x: "10px",

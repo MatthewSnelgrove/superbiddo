@@ -6,7 +6,7 @@ import { NotificationEvents } from '@/types/notificationTypes';
 
 function useNotifications(user: User | null, setToast: (error: ErrorType) => void) {
     const [permission, setPermission] = useState<NotificationPermission>('default');
-    const socketRef = useRef<ReturnType<typeof io>>();
+    const socketRef = useRef<ReturnType<typeof io>>(null);
 
     useEffect(() => {
         if (!user) {

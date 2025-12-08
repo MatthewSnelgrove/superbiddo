@@ -4,11 +4,11 @@ import { PageName } from "@/types/pageTypes";
 import { User } from "@/types/userTypes";
 import Dialog from "@mui/material/Dialog";
 import EmailIcon from "@mui/icons-material/Email";
-import { motion } from "motion/react";
+import { motion, Variants } from "motion/react";
 import { fetchLogout } from "@/utils/fetchFunctions";
 import { ErrorType } from "@/types/errorTypes";
 
-const footerVariants = {
+const footerVariants: Variants = {
   hidden: {
     opacity: 0,
     y: "20px",
